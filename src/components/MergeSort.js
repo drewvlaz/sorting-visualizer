@@ -1,7 +1,24 @@
-const MergeSort = (arr) => {
+import { ANIMATION_SPEED, PRIMARY_COLOR, SECONDARY_COLOR } from "./Constants";
+import { sleep } from "./Helper";
+
+const MergeSort = async (arr) => {
   const animations = [];
   mergeSortHelper(arr, 0, arr.length - 1, animations);
-  return animations;
+
+  for (let i = 0; i < animations.length; i++) {
+    const bars = document.getElementsByClassName("array-bar");
+    const [barOneIdx, barTwoIdx] = animations[i].compared;
+    const barOneStyle = bars[barOneIdx].style;
+    const barTwoStyle = bars[barTwoIdx].style;
+    barOneStyle.backgroundColor = SECONDARY_COLOR;
+    barTwoStyle.backgroundColor = SECONDARY_COLOR;
+    // setTimeout() failed to work here - color would switch back instantly
+    await sleep(ANIMATION_SPEED);
+    const [idx, newHeight] = animations[i].replaced;
+    barOneStyle.backgroundColor = PRIMARY_COLOR;
+    barTwoStyle.backgroundColor = PRIMARY_COLOR;
+    bars[idx].style.height = `${newHeight}px`;
+  }
 };
 
 const mergeSortHelper = (arr, l, r, animations) => {
