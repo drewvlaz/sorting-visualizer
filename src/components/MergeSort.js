@@ -3,7 +3,7 @@ import { sleep } from "./Helper";
 
 const MergeSort = async (arr) => {
   const animations = [];
-  mergeSortHelper(arr, 0, arr.length - 1, animations);
+  mergeSortAlg(arr, 0, arr.length - 1, animations);
 
   for (let i = 0; i < animations.length; i++) {
     const bars = document.getElementsByClassName("array-bar");
@@ -21,13 +21,13 @@ const MergeSort = async (arr) => {
   }
 };
 
-const mergeSortHelper = (arr, l, r, animations) => {
+const mergeSortAlg = (arr, l, r, animations) => {
   if (l >= r) {
     return;
   }
   let m = Math.floor((r - l) / 2 + l);
-  mergeSortHelper(arr, l, m, animations);
-  mergeSortHelper(arr, m + 1, r, animations);
+  mergeSortAlg(arr, l, m, animations);
+  mergeSortAlg(arr, m + 1, r, animations);
   merge(arr, l, m, r, animations);
 };
 
