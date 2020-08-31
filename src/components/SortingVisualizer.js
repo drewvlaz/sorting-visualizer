@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Button } from "reactstrap";
-import { sleep, randInt, testSort, equalArr } from "./Helper";
+import { randInt, testSort } from "./Helper";
 import { NUMBER_OF_BARS } from "./Constants";
 import MergeSort from "./MergeSort";
 import BubbleSort from "./BubbleSort";
