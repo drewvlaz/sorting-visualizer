@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
+import { Button } from "reactstrap";
 
-const NUMBER_OF_BARS = 250;
+const NUMBER_OF_BARS = 100;
 
 const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
@@ -8,7 +9,8 @@ const SortingVisualizer = () => {
   const resetArray = () => {
     const array = [];
     for (let i = 0; i < NUMBER_OF_BARS; i++) {
-      array.push(randInt(5, 500));
+      // bars of smaller size are hard to see
+      array.push(randInt(10, 250));
     }
     setArray(array);
   };
@@ -19,17 +21,24 @@ const SortingVisualizer = () => {
 
   return (
     <Fragment>
-      {array.map((value, idx) => (
-        <div className="array-bar" key={idx}>
-          {value}
-        </div>
-      ))}
+      <div>
+        {array.map((value, idx) => (
+          <div
+            className="array-bar"
+            key={idx}
+            style={{ height: `${value}px` }}
+          ></div>
+        ))}
+      </div>
+      <Button color="primary" onClick={() => resetArray()}>
+        Reset Array
+      </Button>
     </Fragment>
   );
 };
 
-function randInt(min, max) {
+const randInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
 
 export default SortingVisualizer;
