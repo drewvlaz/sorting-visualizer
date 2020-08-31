@@ -1,5 +1,3 @@
-import React from "react";
-
 const MergeSort = (arr) => {
   const animations = [];
   mergeSortHelper(arr, 0, arr.length - 1, animations);
@@ -61,18 +59,14 @@ const merge = (arr, l, m, r, animations) => {
       compared: [l + i, l + i],
       replaced: [k, L[i]],
     });
-    arr[k] = L[i];
-    i++;
-    k++;
+    arr[k++] = L[i++];
   }
   while (j < n2) {
     animations.push({
       compared: [m + 1 + j, m + 1 + j],
       replaced: [k, R[j]],
     });
-    arr[k] = R[j];
-    j++;
-    k++;
+    arr[k++] = R[j++];
   }
 };
 
