@@ -1,3 +1,7 @@
+import BubbleSort from "./BubbleSort";
+import MergeSort from "./MergeSort";
+import QuickSort from "./QuickSort";
+
 export const testSort = () => {
   const arr = [];
   const len = randInt(10, 1000);
@@ -5,7 +9,7 @@ export const testSort = () => {
     arr.push(randInt(-1000, 1000));
   }
   const jsSortedArr = arr.slice().sort((a, b) => a - b);
-  // BubbleSort(arr);
+  QuickSort(arr);
   console.log(equalArr(jsSortedArr, arr));
 };
 
