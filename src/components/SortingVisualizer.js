@@ -1,7 +1,9 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Button } from "reactstrap";
+
 import { randInt, testSort } from "./Helper";
 import { NUMBER_OF_BARS } from "./Constants";
+
 import BubbleSort from "./BubbleSort";
 import InsertionSort from "./InsertionSort";
 import MergeSort from "./MergeSort";
@@ -25,21 +27,18 @@ const SortingVisualizer = () => {
   }, []);
 
   // Sorting algorithm animation functions
-  const bubbleSort = async () => {
+  const bubbleSort = () => {
     BubbleSort(array);
     console.log(array);
   };
-
   const insertionSort = () => {
     InsertionSort(array);
     console.log(array);
   };
-
   const mergeSort = () => {
     MergeSort(array);
     console.log(array);
   };
-
   const quickSort = async () => {
     QuickSort(array);
     console.log(array);
@@ -47,7 +46,7 @@ const SortingVisualizer = () => {
 
   return (
     <Fragment>
-      <div className="container mt-5">
+      <div className="container mt-3">
         <div className="m-2">
           {array.map((value, idx) => (
             <div

@@ -19,7 +19,7 @@ export const testSort = () => {
   // BubbleSort(arr);
   // MergeSort(arr);
   // QuickSort(arr);
-  // InsertionSort(arr);
+  InsertionSort(arr);
 
   console.log(arr);
   console.log(equalArr(jsSortedArr, arr));
