@@ -5,6 +5,7 @@ const MergeSort = async (arr) => {
   const animations = [];
   mergeSortAlg(arr, 0, arr.length - 1, animations);
 
+  // Animate sort
   for (let i = 0; i < animations.length; i++) {
     const bars = document.getElementsByClassName("array-bar");
     const [barOneIdx, barTwoIdx] = animations[i].compared;

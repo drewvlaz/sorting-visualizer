@@ -4,6 +4,7 @@ import { sleep } from "./Helper";
 const BubbleSort = async (arr) => {
   const animations = [];
 
+  // Perform actual sorting and add to animations
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - 1 - i; j++) {
       const compared = [j, j + 1];
@@ -21,6 +22,7 @@ const BubbleSort = async (arr) => {
     }
   }
 
+  // Animate sort
   for (let i = 0; i < animations.length; i++) {
     const bars = document.getElementsByClassName("array-bar");
     const [barOneIdx, barTwoIdx] = animations[i].compared;
