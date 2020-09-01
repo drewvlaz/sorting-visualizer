@@ -13,7 +13,7 @@ const SortingVisualizer = () => {
     const array = [];
     for (let i = 0; i < NUMBER_OF_BARS; i++) {
       // Bars of smaller size are hard to see
-      array.push(randInt(10, 350));
+      array.push(randInt(10, 450));
     }
     setArray(array);
     console.log(array);
