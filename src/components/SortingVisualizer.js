@@ -2,8 +2,9 @@ import React, { useState, Fragment, useEffect } from "react";
 import { Button } from "reactstrap";
 import { randInt, testSort } from "./Helper";
 import { NUMBER_OF_BARS } from "./Constants";
-import MergeSort from "./MergeSort";
 import BubbleSort from "./BubbleSort";
+import InsertionSort from "./InsertionSort";
+import MergeSort from "./MergeSort";
 import QuickSort from "./QuickSort";
 
 const SortingVisualizer = () => {
@@ -26,6 +27,11 @@ const SortingVisualizer = () => {
   // Sorting algorithm animation functions
   const bubbleSort = async () => {
     BubbleSort(array);
+    console.log(array);
+  };
+
+  const insertionSort = () => {
+    InsertionSort(array);
     console.log(array);
   };
 
@@ -57,6 +63,9 @@ const SortingVisualizer = () => {
           </Button>{" "}
           <Button color="success" onClick={() => bubbleSort()}>
             Bubble Sort
+          </Button>{" "}
+          <Button color="success" onClick={() => insertionSort()}>
+            Insertion Sort
           </Button>{" "}
           <Button color="success" onClick={() => mergeSort()}>
             Merge Sort
