@@ -52,7 +52,7 @@ const merge = (arr, l, m, r, animations) => {
   // Merge temp arrays back into main
   while (i < n1 && j < n2) {
     // Comparing two bars
-    const barsCompared = [l + i, m + 1 + j];
+    const barsCompared = [k, m + 1 + j];
     const barReplaced = [];
     if (L[i] <= R[j]) {
       barReplaced.push(k, L[i]);
