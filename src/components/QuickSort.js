@@ -11,12 +11,15 @@ const QuickSort = async (arr) => {
     const [barOneIdx, barTwoIdx] = animations[i].compared;
     const barOneStyle = bars[barOneIdx].style;
     const barTwoStyle = bars[barTwoIdx].style;
+
     barOneStyle.backgroundColor = SECONDARY_COLOR;
     barTwoStyle.backgroundColor = SECONDARY_COLOR;
+
     // setTimeout() failed to work here - color would switch back instantly
     await sleep(ANIMATION_SPEED);
+
     const swapped = animations[i].swapped;
-    if (swapped.length !== 0) {
+    if (swapped) {
       const [barOneHeight, barTwoHeight] = swapped;
       barOneStyle.height = `${barTwoHeight}px`;
       barTwoStyle.height = `${barOneHeight}px`;
@@ -48,6 +51,9 @@ const partition = (arr, l, r, animations) => {
   while (k <= j) {
     const barsCompared = [];
     const barsSwapped = [];
+    // animations.push({
+    //   compared: [k, l],
+    // });
     if (arr[k] < p) {
       barsCompared.push(k, i);
       barsSwapped.push(arr[k], arr[i]);

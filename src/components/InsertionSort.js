@@ -50,6 +50,7 @@ const InsertionSort = async (arr) => {
 
     barOneStyle.backgroundColor = PRIMARY_COLOR;
     barTwoStyle.backgroundColor = PRIMARY_COLOR;
+
     if (animations[i].swapped) {
       const [barOneHeight, barTwoHeight] = animations[i].swapped;
       barOneStyle.height = `${barTwoHeight}px`;
