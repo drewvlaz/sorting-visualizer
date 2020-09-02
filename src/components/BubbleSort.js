@@ -2,11 +2,10 @@ import { ANIMATION_SPEED, PRIMARY_COLOR, SECONDARY_COLOR } from "./Constants";
 import { sleep } from "./Helper";
 
 const BubbleSort = async (arr) => {
-  const bars = document.getElementsByClassName("array-bar");
-
   // Perform actual sorting and add to animations
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - 1 - i; j++) {
+      const bars = document.getElementsByClassName("array-bar");
       const barOneStyle = bars[j].style;
       const barTwoStyle = bars[j + 1].style;
 
