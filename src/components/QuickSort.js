@@ -12,6 +12,7 @@ const QuickSort = async (arr) => {
     const barOneStyle = bars[barOneIdx].style;
     const barTwoStyle = bars[barTwoIdx].style;
 
+    // Highlight compared bars
     barOneStyle.backgroundColor = SECONDARY_COLOR;
     barTwoStyle.backgroundColor = SECONDARY_COLOR;
 
@@ -24,6 +25,8 @@ const QuickSort = async (arr) => {
       barOneStyle.height = `${barTwoHeight}px`;
       barTwoStyle.height = `${barOneHeight}px`;
     }
+
+    // Revert to original color
     barOneStyle.backgroundColor = PRIMARY_COLOR;
     barTwoStyle.backgroundColor = PRIMARY_COLOR;
   }
