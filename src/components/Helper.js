@@ -16,10 +16,10 @@ export const testSort = () => {
   const jsSortedArr = arr.slice().sort((a, b) => a - b);
 
   // Sort to test
-  // BubbleSort(arr);
+  BubbleSort(arr);
   // MergeSort(arr);
   // QuickSort(arr);
-  InsertionSort(arr);
+  // InsertionSort(arr);
 
   console.log(arr);
   console.log(equalArr(jsSortedArr, arr));
