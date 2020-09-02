@@ -16,8 +16,8 @@ export const testSort = () => {
   const jsSortedArr = arr.slice().sort((a, b) => a - b);
 
   // Sort to test
-  BubbleSort(arr);
-  // MergeSort(arr);
+  // BubbleSort(arr);
+  MergeSort(arr);
   // QuickSort(arr);
   // InsertionSort(arr);
 

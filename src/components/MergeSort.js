@@ -11,14 +11,20 @@ const MergeSort = async (arr) => {
     const [barOneIdx, barTwoIdx] = animations[i].compared;
     const barOneStyle = bars[barOneIdx].style;
     const barTwoStyle = bars[barTwoIdx].style;
+
+    // Highlight compared bars
     barOneStyle.backgroundColor = SECONDARY_COLOR;
     barTwoStyle.backgroundColor = SECONDARY_COLOR;
+
     // setTimeout() failed to work here - color would switch back instantly
     await sleep(ANIMATION_SPEED);
+
     const [idx, newHeight] = animations[i].replaced;
+    bars[idx].style.height = `${newHeight}px`;
+
+    // Revert to original color
     barOneStyle.backgroundColor = PRIMARY_COLOR;
     barTwoStyle.backgroundColor = PRIMARY_COLOR;
-    bars[idx].style.height = `${newHeight}px`;
   }
 };
 
