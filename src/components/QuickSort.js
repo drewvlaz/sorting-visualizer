@@ -54,17 +54,17 @@ const partition = (arr, l, r, animations) => {
   while (k <= j) {
     const barsCompared = [];
     const barsSwapped = [];
-    // animations.push({
-    //   compared: [k, l],
-    // });
+
     if (arr[k] < p) {
       barsCompared.push(k, i);
       barsSwapped.push(arr[k], arr[i]);
+
       [arr[k], arr[i]] = [arr[i], arr[k]];
       i++;
     } else if (arr[k] > p) {
       barsCompared.push(k, j);
       barsSwapped.push(arr[k], arr[j]);
+
       [arr[k], arr[j]] = [arr[j], arr[k]];
       j--;
       continue;
@@ -72,10 +72,12 @@ const partition = (arr, l, r, animations) => {
       barsCompared.push(k, k);
       barsSwapped.push(arr[k], arr[k]);
     }
+
     animations.push({
       compared: barsCompared,
       swapped: barsSwapped,
     });
+
     k++;
   }
 

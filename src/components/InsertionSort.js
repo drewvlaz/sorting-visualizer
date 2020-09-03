@@ -13,8 +13,6 @@ const InsertionSort = async (arr) => {
       compared: [i, i],
       swapped: [arr[i], arr[i]],
     });
-    const barSelected = [];
-    const barsSwapped = [];
 
     while (j >= 0 && arr[j] > key) {
       //   barSelected.push(j, j + 1);

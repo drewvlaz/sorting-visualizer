@@ -1,7 +1,7 @@
-import BubbleSort from "./BubbleSort";
-import MergeSort from "./MergeSort";
-import QuickSort from "./QuickSort";
-import InsertionSort from "./InsertionSort";
+// import BubbleSort from "./BubbleSort";
+// import MergeSort from "./MergeSort";
+// import QuickSort from "./QuickSort";
+// import InsertionSort from "./InsertionSort";
 
 export const testSort = () => {
   // Create arr of random length filled with random numbers
@@ -17,7 +17,7 @@ export const testSort = () => {
 
   // Sort to test
   // BubbleSort(arr);
-  MergeSort(arr);
+  // MergeSort(arr);
   // QuickSort(arr);
   // InsertionSort(arr);
 

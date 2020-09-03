@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import "./App.css";
 import SortingVisualizer from "./components/SortingVisualizer";
-import { Jumbotron } from "reactstrap";
 
 function App() {
   return (
