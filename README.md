@@ -1,8 +1,8 @@
 # Sorting Visualizer
 
-The motivation behind this project was to learn about sorting algorithms in a visual and interactive way. A demo is live [here](https://drewvlaz-sorting-visualizer.netlify.app/).
+When I began learning about sorting algorithms, I found it somewhat difficult to grasp what was actually occuring and how these algorithms differed in their approaches to sorting. This served as the reasoning behind this project, motivating me to implement algorithms in a visual and interactive way. Check it out [here](https://drewvlaz-sorting-visualizer.netlify.app/).
 
-This visualizer implements the following:
+Sorting Algorithms Implemented:
 
 - Bubble Sort
 - Insertion Sort
