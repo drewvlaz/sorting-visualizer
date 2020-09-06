@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { Button } from "reactstrap";
 
-import { randInt, testSort } from "./Helper";
+import { randInt } from "./Helper";
 import { NUMBER_OF_BARS } from "./Constants";
 
 import BubbleSort from "./BubbleSort";
