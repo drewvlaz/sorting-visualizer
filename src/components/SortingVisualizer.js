@@ -28,31 +28,28 @@ const SortingVisualizer = () => {
   }, []);
 
   // Sorting algorithm animation functions
-  const bubbleSort = async () => {
+  const sort = async (algorithm) => {
     // For some reason if no await for set animation, application immediately
     // shows sorted bars
     await setAnimationComplete(false);
-    await BubbleSort(array);
-    console.log(array);
+    switch (algorithm) {
+      case "BubbleSort":
+        await BubbleSort(array);
+        break;
+      case "InsertionSort":
+        await InsertionSort(array);
+        break;
+      case "MergeSort":
+        await MergeSort(array);
+        break;
+      case "QuickSort":
+        await QuickSort(array);
+        break;
+      default:
+        return;
+    }
     setAnimationComplete(true);
-  };
-  const insertionSort = async () => {
-    await setAnimationComplete(false);
-    await InsertionSort(array);
     console.log(array);
-    setAnimationComplete(true);
-  };
-  const mergeSort = async () => {
-    await setAnimationComplete(false);
-    await MergeSort(array);
-    console.log(array);
-    setAnimationComplete(true);
-  };
-  const quickSort = async () => {
-    await setAnimationComplete(false);
-    await QuickSort(array);
-    console.log(array);
-    setAnimationComplete(true);
   };
 
   return (
@@ -78,28 +75,28 @@ const SortingVisualizer = () => {
           <Button
             color="success"
             disabled={!animationComplete}
-            onClick={() => bubbleSort()}
+            onClick={() => sort("BubbleSort")}
           >
             Bubble Sort
           </Button>{" "}
           <Button
             color="success"
             disabled={!animationComplete}
-            onClick={() => insertionSort()}
+            onClick={() => sort("InsertionSort")}
           >
             Insertion Sort
           </Button>{" "}
           <Button
             color="success"
             disabled={!animationComplete}
-            onClick={() => mergeSort()}
+            onClick={() => sort("MergeSort")}
           >
             Merge Sort
           </Button>{" "}
           <Button
             color="success"
             disabled={!animationComplete}
-            onClick={() => quickSort()}
+            onClick={() => sort("QuickSort")}
           >
             Quick Sort
           </Button>{" "}
